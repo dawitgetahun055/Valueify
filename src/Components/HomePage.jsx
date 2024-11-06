@@ -1,155 +1,147 @@
-import Cyber_Savvy from "../assets/Cyber_Savvy.png";
-import Chess from "../assets/Chess.png";
-import Arrow from "../assets/Arrow.svg";
-import Robot from "../assets/Robot-On-Laptop.svg";
-import Programming from "../assets/Programming.svg";
-import Calculations from "../assets/Calculations.svg";
-import CEO from "../assets/Dawit-Getahun.png";
-import Questions from "./Questions";
+import GirlImage from "../assets/Girl_Image.png";
+import CourseCard from "./CourseCard";
+import LeftQuote from "../assets/LeftQuote.svg";
+import RightQuote from "../assets/RightQuote.svg";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const goToCourseGuidePage = () => {
+    navigate("/courseguide");
+  };
   return (
     <>
-      <section className="Hero">
-        <div>
-          <h1>
-            Shape your future: Skill up, Level up <br /> with Valueify
-          </h1>
-          <p>
-            Unlock the door to the future job market and <br /> explore the most
-            in-demand skills.
-          </p>
-          <button id="btn_1">Get Started</button>
-          <button id="btn_2">Learn more</button>
-        </div>
-        <img
-          src={Cyber_Savvy}
-          alt="Illustration of young man engaged with a computer, embodying creativity and technology"
-        />
-      </section>
-      <section className="Benefits">
-        <div className="benefits-container">
-          <div className="benefits-header">
-            <h2>
-              Discover the benefits of our e-learning <br /> platform.
-            </h2>
-            <p>
-              Our e-learning platform offers flexibility and convenience,
-              allowing you to learn at your own pace.
-            </p>
-          </div>
-          <div className="benefits-content">
-            <div>
-              <h2>Flexibility</h2>
-              <p>Location and time freedom.</p>
-            </div>
-            <div>
-              <h2>Expert instructors</h2>
-              <p>Get guidance from experts.</p>
-            </div>
-          </div>
-        </div>
-        <img src={Chess} alt="Chess pieces symbolizing strategy and skill" />
-      </section>
-      <section className="Courses">
-        <div className="courses-header">
-          <p>Choose your courses</p>
+      <section className="HomePage">
+        <h1>Invest in your Education</h1>
+        <div className="subject-tags">
           <div>
-            <p>View All</p>
-            <span>
-              <img
-                src={Arrow}
-                alt="Arrow icon indication the link to view all courses"
-              />
-            </span>
-          </div>
-        </div>
-        <div className="course-contents">
-          <div>
-            <img src={Robot} alt="" />
-            <p>
-              AI spark: your digital <br /> gate way
-            </p>
+            <p>Mathematics</p>
           </div>
           <div>
-            <img src={Programming} alt="" />
             <p>Programming</p>
           </div>
           <div>
-            <img src={Calculations} alt="" />
-            <p>Mathematics</p>
+            <p>Biology</p>
+          </div>
+          <div>
+            <p>Physics</p>
+          </div>
+          <div>
+            <p>Personal Development</p>
+          </div>
+          <div>
+            <p>Digital Marketing</p>
+          </div>
+        </div>
+        <div className="intro">
+          <img src={GirlImage} alt="" />
+          <div>
+            <h2>
+              Welcome to <span>Valueify</span>
+            </h2>
+            <p id="intro-text">Your learning journey starts here</p>
+            <p id="motivational-text">
+              Unlock your potential. Take the first step to mastery
+            </p>
+          </div>
+        </div>
+        <div className="courses">
+          <h2>Explore modules</h2>
+          <div className="course-list">
+            <CourseCard
+              className={"Card-container"}
+              onClick={goToCourseGuidePage}
+            />
+            <CourseCard
+              className={"Card-container"}
+              onClick={goToCourseGuidePage}
+            />
+            <CourseCard
+              className={"Card-container"}
+              onClick={goToCourseGuidePage}
+            />
+          </div>
+          <p id="View All">View all</p>
+        </div>
+        <div className="Recommended">
+          <div>
+            <h2>Recommended for all</h2>
+            <div className="recommended-content">
+              <div className="recommended-description">
+                <h3>The Trachtenburg System: A Mental Math Marvel</h3>
+                <p>
+                  Step in to a world where math becomes your secret language,
+                  where numbers dance across your mind, and complex problems
+                  dissolve into an elegant solutions.
+                </p>
+                <p>
+                  Harnessing the power of quick thinking, transforming
+                  challenges into opportunities and sharpening your mind for
+                  anything life throws at you.
+                </p>
+                <div>
+                  <button>
+                    <span>Enroll now</span>
+                  </button>
+                  <button>Learn more</button>
+                </div>
+              </div>
+              <div>
+                <CourseCard className={"Card-for-Recommended"} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="Recommended Additional">
+          <div>
+            <h2>Additional features</h2>
+            <div className="recommended-content">
+              <div className="recommended-description">
+                <h3>Ace Your National Exam</h3>
+                <p>
+                  This feature let's you have a guide tailored to help you with
+                  your national examination. We provided you a digital workbook
+                  designed to break down complex concepts into simple,
+                  digestible lessons while offering more of a real exam based
+                  questions that help you to apply what you have learned. Ready
+                  to practice like a top scorer??
+                </p>
+                <div id="additionalsection-btn">
+                  <button>
+                    <span>Start now</span>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <CourseCard className={"Card-for-Recommended"} />
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section className="CEO">
-        <article className="empowering">
-          <h2>"Empowering Ethiopian next digital pioneers"</h2>
-          <p>
-            “At, Valueify, we believe that learning should be an exciting
-            journey. we believe that learning shouldn’t be confined to the walls
-            of a classroom. Its a journey that extends beyond limits, allowing
-            you to learn from anywhere, anytime. That’s why our platform is
-            build to inspire you, challenge you and guide you towards your dream
-            all while having fun along the way.”
-          </p>
-        </article>
-        <aside>
-          <img src={CEO} alt="Image of the CEO and founder of Valueify" />
-          <p>CEO and founder of Valueify.</p>
-        </aside>
-        <article className="join">
-          <h2>Join Our Community</h2>
-          <p>
-            At valueify, learning isn’t a solo journey. It is a collaborative
-            adventure. Join and connect with like minded learners from across
-            Ethiopia, share your experience, tackle challenges together, and
-            celebrate each achievement. whether you’re just starting or looking
-            to sharpen your skills, our community is here to support you every
-            step of the way. Together we’re not just learning, we’re building
-            the future, one skill at a time.
-          </p>
-        </article>
-      </section>
-      <section className="FAQs">
-        <div className="FAQs-header">
-          <h2>Frequently Asked Questions</h2>
-          <p>
-            Find answers to common questions <br /> about our e-learning
-            platform.
-          </p>
-        </div>
-        <div className="questions-container">
-          <Questions
-            question={"How do I enroll?"}
-            answer={
-              "To enroll in our courses, simply visit our website and click on the 'Sign Up' button. Follow the instructions to create an account and start learning."
-            }
-          />
-          <Questions
-            question={"How can I access my courses?"}
-            answer={
-              "Once you have enrolled in a course, you can access it by logging into your account and navigating to the 'My Learning ' section. From there, you will be able to view and access all of your enrolled courses."
-            }
-          />
-          <Questions
-            question={"What payment methods do you accept?"}
-            answer={
-              "We accept various payment methods to make enrollment convenient for our learners in Ethiopia, including Telebirr, HelloCash, direct bank transfer, Visa, Mastercard, American Express, and PayPal."
-            }
-          />
-          <Questions
-            question={"Are the courses self-paced?"}
-            answer={
-              "Yes, our courses are designed to be self-paced. You can learn at your own convenience and progress through the material at a pace that suits you."
-            }
-          />
-          <Questions
-            question={"Can I get a refund?"}
-            answer={
-              "We offer a 30-day money-back guarantee. If you are not satisfied with your course, you can request a refund within 30 days of purchase."
-            }
-          />
-        </div>
+      <section className="Future-pathways">
+        <h2>
+          <span>
+            <img src={LeftQuote} alt="" />
+          </span>
+          Your future starts here
+          <span>
+            <img src={RightQuote} alt="" />
+          </span>
+        </h2>
+        <p>
+          we don't just help you pass exam, we prepare you for the future.
+          Whether it's mastering skills like mental math, practicing with exam
+          focussed workbooks, or receiing mentorship from experts, we're here to
+          guide you every step of the way.
+        </p>
+        <p>
+          Our goals goes beyond academics. We're commited to giving you the most
+          in-demand skills in today's world. Helping you build the knowledge and
+          expertise that will set you apart in the market. This platform isn't
+          just about learning. Its about unlocking your potential and creating
+          pathways to the future you deserve
+        </p>
       </section>
     </>
   );
